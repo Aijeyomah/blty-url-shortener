@@ -1,10 +1,14 @@
-import { ErrorOptions } from './interface';
 import ModuleError from './module.error';
 import constant from '../constants';
 
 const { INTERNAL_SERVER_ERROR } = constant;
 
 /**
+ * @class ApiError
+ * @extends {ModuleError}
+ */
+class ApiError extends ModuleError {
+  /**
    * The ApiError Constructor.
    * @param {Object} options - A configuration object for errors.
    * @param {String} options.message - The error message if any.
@@ -12,12 +16,7 @@ const { INTERNAL_SERVER_ERROR } = constant;
    * @param {Array} options.errors - Additional error details if any.
    * @constructor ApiError
    */
-class ApiError extends ModuleError {
-  
-  status: string | number ;
-  errors: any;
-
-  constructor(options: ErrorOptions) {
+  constructor(options = {}) {
     super(options);
     this.name = this.constructor.name;
     this.message = options.message || INTERNAL_SERVER_ERROR;
