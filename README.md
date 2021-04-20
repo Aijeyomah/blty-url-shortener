@@ -10,7 +10,7 @@
 * [usage](#usage)
     * [Generating short url](#Generating-short-url)
     * [Translating the short url](#Translating-the-short-url)
-# bity-url-shortener
+# blty-url-shortener
 
 
 ## Getting Started
@@ -60,9 +60,9 @@ npm start
 ### usage
 The bity-url-shortener a  Playgrounds interface at ```/graphiql```. The query accept one required argument and two optional parameter,
 
-#  ```url - required``` : The url to be converted to a short url
-# ```customName - optional```: a 6-character name provided to used to generate a short url in place of a generated random string
-# ```replace - optional```: a boolean value which represent if a 
+ ```url - required``` : The url to be converted to a short url
+```customName - optional```: a 6-character name provided to used to generate a short url in place of a generated random string
+```replace - optional```: a boolean value which represent if a 
 
 ### Generating short url
 ## When only the required url parameter is supplied
@@ -78,7 +78,7 @@ query {
 
 ```
 
-result
+## result
 ```json
 {
   "data": {
@@ -103,7 +103,7 @@ query {
 
 ```
 
-result
+## result
 ```json
 {
   "data": {
