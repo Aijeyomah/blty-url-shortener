@@ -1,7 +1,6 @@
 import randomString from 'randomstring';
-import { loggers } from 'winston';
 import urlDb from '../model';
-import config from '../../config';
+import config from '../../config/env';
 import { moduleErrLogMessager } from '../utils';
 
 const { SHORT_BASE_URL } = config;
@@ -36,7 +35,6 @@ class UrlShortenerService {
  * generates a short url corresponding to the provided long url
  * @returns {string} - short url representing the the long url
  * @memberof UrlShortenerService
- * @return
  */
   generateShortUrl() {
     try {
@@ -47,11 +45,11 @@ class UrlShortenerService {
         // saves a the random string once it has no occurrence in the database
         do {
           shortString = randomString.generate(6);
-          linkExist = this.checkIfShortStringExist(shortString);
+          linkExist = UrlShortenerService.checkIfShortStringExist(shortString);
         } while (linkExist);
 
         this.saveShortString(shortString);
-        return this.createShortUrl(shortString);
+        return UrlShortenerService.createShortUrl(shortString);
       }
 
       return this.useCustomName(shortString);
@@ -70,7 +68,7 @@ class UrlShortenerService {
  */
   useCustomName(shortString) {
     shortString = this.customName;
-    const linkExist = this.checkIfShortStringExist(shortString);
+    const linkExist = UrlShortenerService.checkIfShortStringExist(shortString);
 
     if (linkExist) {
       // if  the custom name has been used to generate a short url
@@ -80,14 +78,14 @@ class UrlShortenerService {
         urlDb.forEach((el) => {
           el.longUrl = this.longLink;
         });
-        return this.createShortUrl(shortString);
+        return UrlShortenerService.createShortUrl(shortString);
       }
-      const error = new Error(`"${this.customName}" already exists. Replace the existing link with the new one?`);
+      const error = new Error(`Custom name - ${this.customName} already exists. Replace the existing link with the new one?`);
       error.code = 'duplicate_short_name';
       throw (error);
     } else {
       this.saveShortString(shortString);
-      return this.createShortUrl(shortString);
+      return UrlShortenerService.createShortUrl(shortString);
     }
   }
 
@@ -98,7 +96,7 @@ class UrlShortenerService {
  * if the short string exist else return undefined
  * @memberof UrlShortenerService
  */
-  fetchShortString(shortString) {
+  static fetchShortString(shortString) {
     try {
       return urlDb.find((item) => item.shortString === shortString);
     } catch (e) {
@@ -111,10 +109,9 @@ class UrlShortenerService {
  * @returns {boolean} - true if it exist else false
  * @memberof UrlShortenerService
  */
-  checkIfShortStringExist(shortString) {
+  static checkIfShortStringExist(shortString) {
     try {
-      const existingShortLink = !!this.fetchShortString(shortString);
-      return existingShortLink;
+      return !!UrlShortenerService.fetchShortString(shortString);
     } catch (e) {
       moduleErrLogMessager(e);
     }
@@ -128,8 +125,8 @@ class UrlShortenerService {
  */
   saveShortString(shortString) {
     try {
-      urlDb.push({ longUrl: this.longLink, shortString });
-      loggers.info('Url successfully saved');
+      urlDb.push({ longUrl: this.longLink, shortString: shortString.toLowerCase() });
+      logger.info('Url successfully saved');
     } catch (e) {
       moduleErrLogMessager(e);
     }
@@ -141,7 +138,7 @@ class UrlShortenerService {
  * @returns {string} - return a short url link that represents the long link passed
  * @memberof UrlShortenerService
  */
-  createShortUrl(shortString) {
+  static createShortUrl(shortString) {
     try {
       const shortUrlLink = `${SHORT_BASE_URL}/${shortString}`;
       return shortUrlLink;

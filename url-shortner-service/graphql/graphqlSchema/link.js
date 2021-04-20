@@ -11,13 +11,13 @@ const Url = gql`
   type UrlShortenerResponse {
     status: Int!
     message: String!
-    data: Url
+    shortUrl: String
   }
   
   # MUTATION
   
   extend type Query {
-    urlShortener(url: String!, customName: String): UrlShortenerResponse!
+    urlShortener(url: String!, customName: String, replace: Boolean): UrlShortenerResponse!
   }
 `;
 

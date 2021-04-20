@@ -1,7 +1,7 @@
 import isUrl from 'is-url';
 import UrlShortenerService from '../services';
 import {
-  graphQLUrlResponse, constants, ApiError, graphQLErrorResponse, moduleErrLogMessager,
+  graphQLUrlResponse, constants, ApiError, moduleErrLogMessager,
 } from '../utils';
 
 const { SHORTEN_URL_FAIL, SHORTEN_URL, INVALID_URL } = constants;
@@ -23,14 +23,14 @@ const generateShortUrl = (url, customName = null, replace = false) => {
       const data = shortUrlService.generateShortUrl();
       return graphQLUrlResponse(200, SHORTEN_URL, data);
     }
-    return graphQLErrorResponse(400, INVALID_URL);
+    return graphQLUrlResponse(400, INVALID_URL);
   } catch (e) {
     const error = new ApiError({
       status: SHORTEN_URL_FAIL,
       message: e.message,
     });
     moduleErrLogMessager(error);
-    return graphQLErrorResponse(500, SHORTEN_URL_FAIL);
+    return graphQLUrlResponse(500, e.message);
   }
 };
 

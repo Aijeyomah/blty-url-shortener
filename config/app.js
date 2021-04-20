@@ -23,7 +23,7 @@ const appConfig = (app, server) => {
   // add an entry route
   app.get('/', (req, res) => successResponse(res, { message: WELCOME }));
 
-  app.use('/api/v1', urlRoute);
+  app.use('/', urlRoute);
   // catches 404 errors and forwards them to error handlers
   app.use((req, res, next) => next(notFoundApi));
 

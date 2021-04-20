@@ -2,7 +2,7 @@ import express from 'express';
 import { ApolloServer } from 'apollo-server-express';
 import config, { appConfig } from './config';
 import initLogger from './config/logger';
-import { typeDefs, resolvers } from './graphql';
+import { typeDefs, resolvers } from './app/graphql';
 
 const app = express();
 
@@ -20,3 +20,5 @@ const server = new ApolloServer({
 });
 // app config
 appConfig(app, server);
+
+export default app;

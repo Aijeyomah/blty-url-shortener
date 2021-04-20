@@ -18,9 +18,8 @@ const { ERROR_REDIRECTING_FAIL, ERROR_REDIRECTING } = constants;
 const redirectToLongUrl = (req, res, next) => {
   try {
     const { shortUrl } = req.params;
-
-    const urlService = new UrlShortenerService(shortUrl);
-    const { longUrl } = urlService.fetchShortString(shortUrl) || {};
+    const shortString = shortUrl.toLowerCase();
+    const { longUrl } = UrlShortenerService.fetchShortString(shortString) || {};
     return longUrl ? res.redirect(longUrl) : errorResponse(req, res, genericErrors.notFoundApi);
   } catch (e) {
     const error = new ApiError({

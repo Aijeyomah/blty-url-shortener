@@ -1,6 +1,6 @@
-import {
-  constants, ModuleError, genericErrors,
-} from '.';
+import constants from './constants';
+import ModuleError from './error/module.error';
+import genericErrors from './error/generic.errors';
 
 const { SUCCESS_RESPONSE, SUCCESS, FAIL } = constants;
 const { serverError } = genericErrors;
@@ -86,25 +86,12 @@ export const errorResponse = (req, res, error) => {
    * @static
    * @param {number} status - the  success status code
    * @param {string} message - the response message
-   * @param {string} data - a short url
+   * @param {string} shortUrl - a short url
    * @memberof Helpers
-   * @returns {object} - contains the status, message data.
+   * @returns {object} - contains the status, message shortUrl.
    */
-export const graphQLUrlResponse = (status, message, data) => ({
+export const graphQLUrlResponse = (status, message, shortUrl) => ({
   status,
   message,
-  data,
-});
-
-/**
-   * Generates a response for graphQL error response.
-   * @static
-   * @param {number} status - the error status code
-   * @param {string} message - the response message
-   * @memberof Helpers
-   * @returns {object} - contains the status, message
-   */
-export const graphQLErrorResponse = (status, message) => ({
-  status,
-  message,
+  shortUrl,
 });

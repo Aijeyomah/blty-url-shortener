@@ -4,10 +4,10 @@
     "description": "A url shortening service",
     "main": "index.js",
     "scripts": {
-        "test": "",
+        "test": "mocha -c -r esm test/**/*.test.js --timeout 12000 --exit",
         "start": "node -r esm .",
         "dev": "nodemon -r esm .",
-        "lint": "eslint . --ext .js --fix"
+        "lint": "eslint --fix --ext .js ./"
     },
     "repository": {
         "type": "git",
@@ -28,11 +28,13 @@
         "apollo-server-express": "^2.22.2",
         "app-root-path": "^3.0.0",
         "chai": "^4.3.4",
+        "chai-http": "^4.3.0",
         "dotenv": "^8.2.0",
         "esm": "^3.2.25",
         "express": "^4.17.1",
         "express-graphql": "^0.12.0",
         "graphql": "^15.5.0",
+        "graphql-tools": "^7.0.4",
         "helmet": "^4.4.1",
         "is-url": "^1.2.4",
         "mocha": "^8.3.2",
@@ -43,6 +45,7 @@
     "devDependencies": {
         "eslint": "^7.24.0",
         "eslint-config-airbnb-base": "^14.2.1",
-        "eslint-plugin-import": "^2.22.1"
+        "eslint-plugin-import": "^2.22.1",
+        "faker": "^5.5.3"
     }
 }

@@ -5,7 +5,7 @@ import ModuleError from './error/module.error';
 
 import {
   errorResponse, makeError, moduleErrLogMessager,
-  successResponse, graphQLUrlResponse, graphQLErrorResponse,
+  successResponse, graphQLUrlResponse,
 } from './helper';
 
 export {
@@ -18,6 +18,5 @@ export {
   moduleErrLogMessager,
   successResponse,
   graphQLUrlResponse,
-  graphQLErrorResponse,
 
 };

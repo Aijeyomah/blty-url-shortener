@@ -3,7 +3,7 @@ export default {
   SUCCESS: 'success',
   SUCCESS_RESPONSE: 'successfully processed request',
   FAIL: 'fail',
-  API_NOT_FOUND: 'This is not the page you are looking for',
+  NOT_FOUND_API: 'This is not the page you are looking for',
   INTERNAL_SERVER_ERROR: 'Internal Server Error',
   WELCOME: 'Welcome to url shortener service',
   SHORTEN_URL: 'Successfully shortened url',
