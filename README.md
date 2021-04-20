@@ -61,11 +61,13 @@ npm start
 The bity-url-shortener a  Playgrounds interface at ```/graphiql```. The query accept one required argument and two optional parameter,
 
 - ```url - required``` : The url to be converted to a short url
-- ```customName - optional```: a 6-character name provided to used to generate a short url in place of a generated random string
-- ```replace - optional```: a boolean value which represent if a 
+
+- ```customName - optional``` : a 6-character name provided to used to form a short url in place of a generated random string
+
+- ```replace - optional``` : a boolean value which represent if a if existing long url should be replace with the new one
 
 ### Generating short url
-## When only the required url parameter is supplied
+## Only the required url parameter is supplied
 
 ```
 query {
@@ -90,7 +92,7 @@ query {
   }
 }
 ```
-## When only the required url parameter and an optional custom name is provide is supplied
+## The required url parameter and an optional custom name is provide is supplied
 
 ```
 query {
