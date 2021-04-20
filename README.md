@@ -74,7 +74,7 @@ query {
   urlShortener(url: "https://replit.com/@Aijeyomah/ZealousWetParameter#index.js") {
     status
     message
-    data 
+    shortUrl 
   }
 }
 
@@ -99,7 +99,7 @@ query {
   urlShortener(url: "https://replit.com/@Aijeyomah/ZealousWetParameter#index.js", customName: "enyata") {
     status
     message
-    data 
+    shortUrl 
   }
 }
 
