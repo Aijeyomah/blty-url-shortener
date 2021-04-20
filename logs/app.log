@@ -4614,3 +4614,13 @@ Error: Unknown type "B".
 )
 [Tue, 20 Apr 2021 21:27:36 GMT]: URL SHORTENER - [32minfo[39m: ::ffff:127.0.0.1 - - [20/Apr/2021:21:27:36 +0000] "GET /enyata HTTP/1.1" 302 73 "-" "node-superagent/3.8.3"
 )
+[Tue, 20 Apr 2021 22:01:22 GMT]: URL SHORTENER - [31merror[39m: uncaughtException: SHORT_DOMAIN is not defined
+ReferenceError: SHORT_DOMAIN is not defined
+    at Server.<anonymous> (/Users/aijey_omah/Documents/project/config/app.js:35:45)
+    at Object.onceWrapper (events.js:420:28)
+    at Server.emit (events.js:314:20)
+    at Server.EventEmitter.emit (domain.js:483:12)
+    at emitListeningNT (net.js:1350:10)
+    at processTicksAndRejections (internal/process/task_queues.js:83:21)
+    at process.runNextTicks [as _tickCallback] (internal/process/task_queues.js:66:3))
+[Tue, 20 Apr 2021 22:01:48 GMT]: URL SHORTENER - [32minfo[39m: url shortener running on http://localhost:4000/graphiql )
