@@ -6,6 +6,7 @@ import {
 } from '../app/utils';
 import urlRoute from '../app/route';
 
+const {SHORT_BASE_URL} = config
 const { notFoundApi } = genericErrors;
 const { WELCOME } = constants;
 const appConfig = (app, server) => {
@@ -32,7 +33,7 @@ const appConfig = (app, server) => {
   // server listens for connection
   const port = config.PORT || 4000;
   app.listen(port, () => {
-    logger.info(`url shortener running on http://localhost:${port}${server.graphqlPath} `);
+    logger.info(`url shortener running on ${SHORT_BASE_URL}${server.graphqlPath} `);
   });
 };
 
