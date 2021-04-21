@@ -33,8 +33,8 @@ To get started, clone this repository on your local machine using the following 
 Launch your terminal and navigate to the folder you want the project to be and enter the the following commands:
 
 ```
-$ git clone -b develop https://github.com/
-$ cd express-pharmacy-backend
+$ git clone -b main https://github.com/blty-url-shortener
+$ cd blty-url-shortener
 $ npm install
 ```
 ### Environment Variables
