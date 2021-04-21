@@ -88,7 +88,7 @@ query {
     "urlShortener": {
       "status": 200,
       "message": "Successfully shortened url",
-      "shortUrl": "http://localhost:4000/RwxoI5"
+      "shortUrl": "https://blty.herokuapp.com/PdrTKk"
     }
   }
 }
@@ -113,7 +113,7 @@ query {
     "urlShortener": {
       "status": 200,
       "message": "Successfully shortened url",
-      "shortUrl": "http://localhost:4000/enyata"
+      "shortUrl": "https://blty.herokuapp.com/enyata"
     }
   }
 }
