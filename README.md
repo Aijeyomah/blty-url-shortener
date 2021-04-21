@@ -39,7 +39,7 @@ $ npm install
 ```
 ### Environment Variables
 Create a `.env` file and add the environment variables described in the .env.sample file. 
-Note that some of the variables are only necessary if you are using docker. Refer to the `.env.sample` file for details.
+
 
 ## Starting the dev server
 
