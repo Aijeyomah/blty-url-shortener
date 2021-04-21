@@ -6,7 +6,7 @@ import {
 } from '../app/utils';
 import urlRoute from '../app/route';
 
-const {SHORT_BASE_URL} = config
+const { SHORT_BASE_URL } = config;
 const { notFoundApi } = genericErrors;
 const { WELCOME } = constants;
 const appConfig = (app, server) => {

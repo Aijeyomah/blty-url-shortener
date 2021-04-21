@@ -4,7 +4,7 @@ import production from './production';
 import test from './test';
 
 const {
-  PORT: PORT,
+  PORT,
   SHORT_NODE_ENV: NODE_ENV,
 } = process.env;
 

@@ -1,3 +1,5 @@
+[![codecov](https://codecov.io/gh/Aijeyomah/blty-url-shortener/branch/main/graph/badge.svg?token=DEAQUH2UV8)](https://codecov.io/gh/Aijeyomah/blty-url-shortener)
+
 ## Table of contents
 
 * [Getting Started](#Getting-Started)
