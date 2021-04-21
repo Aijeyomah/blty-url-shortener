@@ -63,9 +63,9 @@ The bity-url-shortener a  Playgrounds interface at ```/graphiql```. The query ac
 
 - ```url - required``` : The url to be converted to a short url
 
-- ```customName - optional``` : a 6-character name provided to used to form a short url in place of a generated random string
+- ```customName - optional``` : A 6-character name provided to be used to form a short url in place of a generated random string
 
-- ```replace - optional``` : a boolean value which represent if a if existing long url should be replace with the new one
+- ```replace - optional``` : This can used if a custom name used to generate a short url exist. It is a boolean value which represent if an existing long url should be replace with the new one
 
 ### Generating short url
 ## Only the required url parameter is supplied
