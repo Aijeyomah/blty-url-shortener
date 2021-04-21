@@ -93,7 +93,7 @@ query {
   }
 }
 ```
-## The required url parameter and an optional custom name is provide is supplied
+## The required url parameter and an optional custom name is supplied
 
 ```
 query {
